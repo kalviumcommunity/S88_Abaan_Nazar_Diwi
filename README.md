@@ -195,4 +195,4 @@ Create 2-3 social media posts/mockups for launch
 
 
 Day 45:
-Soft Launch + Feedback Collection
+Soft Launch + Feedback Collection.
