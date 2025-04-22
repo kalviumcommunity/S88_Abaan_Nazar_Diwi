@@ -1,0 +1,27 @@
+{
+  "name": "s88_abaan_nazar_diwi",
+  "version": "1.0.0",
+  "description": "Title : Design It Wear It (DIWI): A Custom Shirt Design & Branding Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalviumcommunity/S88_Abaan_Nazar_Diwi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kalviumcommunity/S88_Abaan_Nazar_Diwi/issues"
+  },
+  "homepage": "https://github.com/kalviumcommunity/S88_Abaan_Nazar_Diwi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
