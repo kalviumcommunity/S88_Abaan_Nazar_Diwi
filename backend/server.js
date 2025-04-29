@@ -7,11 +7,9 @@ require('dotenv').config();
 const app = express();
 const PORT = 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     const dbName = mongoose.connection.name;
@@ -21,7 +19,8 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-// POST - Register user
+
+
 app.post('/api/register', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -40,8 +39,19 @@ app.post('/api/register', async (req, res) => {
 });
 
 
+// GET all users (excluding _id and __v)
+app.get('/api/users', async (req, res) => {
+  try {
+    const users = await User.find({}, '-__v -_id');
+    res.status(200).json(users);
+  } catch (err) {
+    console.error('Error fetching users:', err);
+    res.status(500).json({ message: 'Server error while getting users' });
+  }
+});
 
-// Start Server
+
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
