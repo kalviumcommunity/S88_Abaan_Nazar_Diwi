@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 
 
-
+//POST - Login user
 app.post('/api/register', async (req, res) => {
   const { email, password } = req.body;
   try {
@@ -39,7 +39,7 @@ app.post('/api/register', async (req, res) => {
 });
 
 
-// GET all users (excluding _id and __v)
+// GET all users 
 app.get('/api/users', async (req, res) => {
   try {
     const users = await User.find({}, '-__v -_id');
@@ -49,6 +49,28 @@ app.get('/api/users', async (req, res) => {
     res.status(500).json({ message: 'Server error while getting users' });
   }
 });
+
+
+// PUT - Update user by email
+app.put('/api/users/:email', async (req, res) => {
+  try {
+    const updatedUser = await User.findOneAndUpdate(
+      { email: req.params.email },
+      { $set: req.body },
+      { new: true, projection: { _id: 0, __v: 0 } }
+    );
+
+    if (!updatedUser) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    res.status(200).json(updatedUser);
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Server Error', error });
+  }
+});
+
 
 
 
