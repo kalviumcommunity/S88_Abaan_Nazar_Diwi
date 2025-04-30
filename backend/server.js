@@ -18,8 +18,6 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('MongoDB connection error:', err));
 
 
-
-
 //POST - Login user
 app.post('/api/register', async (req, res) => {
   const { email, password } = req.body;
@@ -61,7 +59,7 @@ app.put('/api/users/:email', async (req, res) => {
     );
 
     if (!updatedUser) {
-      return res.status(404).json({ message: 'User not found' });
+      return res.status(404).json({message: 'User not found'});
     }
 
     res.status(200).json(updatedUser);
@@ -70,8 +68,6 @@ app.put('/api/users/:email', async (req, res) => {
     res.status(500).json({ message: 'Server Error', error });
   }
 });
-
-
 
 
 app.listen(PORT, () => {
