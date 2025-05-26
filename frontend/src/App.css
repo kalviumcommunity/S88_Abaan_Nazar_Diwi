@@ -4,13 +4,34 @@
 
 /* Custom styles */
 body {
-    @apply bg-gray-100 text-gray-800;
-
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
+  background-color: #f4f5f7;
+  @apply bg-gray-100 text-gray-800;
 }
 
+/* Make sure navbar uses full width */
+.navbar {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure it isn’t boxed in */
 .container {
-    @apply mx-auto px-4;
+  max-width: none; /* or delete this class */
+  padding: 0;
+  margin: 0;
+  @apply mx-auto px-4;
 }
+
+
+
 
 button {
     @apply bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600;

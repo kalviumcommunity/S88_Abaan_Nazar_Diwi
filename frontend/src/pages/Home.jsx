@@ -1,13 +1,18 @@
 import React from 'react'
-
+import HeroSection from '../components/Home/HeroSection';
+import MaterialsSection from '../components/Home/MaterialsSection';
+import CollectionsSection from '../components/Home/CollectionsSection';
+import PurposeSection from '../components/Home/PurposeSection';
 function Home() {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Welcome to the home page!</p>
-      <img src="" alt="" />
+      <HeroSection />
+      <MaterialsSection />
+      <CollectionsSection />
+      <PurposeSection />
     </div>
   )
 }
 
 export default Home
+

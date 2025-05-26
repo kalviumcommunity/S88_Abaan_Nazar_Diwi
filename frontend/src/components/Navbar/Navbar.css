@@ -1,0 +1,85 @@
+/* General navbar layout */
+.navbar {
+  position: sticky;        /* Makes it stick to the top on scroll */
+  top: 0;                  /* Stick to top edge */
+  width: 100%;             /* Full width */
+  z-index: 1000;           /* Keeps it above other elements */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  color: #1c1c50;
+  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Logo */
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.logo-main {
+  font-weight: bold;
+  font-size: 20px;
+}
+.logo-tagline {
+  font-size: 12px;
+  margin-top: -4px;
+}
+
+/* Links */
+.navbar-links {
+  display: flex;
+  gap: 55px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #1c1c50;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+.navbar-links a:hover {
+  color: #3a3a9e;
+}
+
+/* Right icons */
+.navbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.cart-link {
+  text-decoration: none;
+  color: #1c1c50;
+  font-weight: 500;
+}
+.icon {
+  font-size: 18px;
+  color: #1c1c50;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .navbar-icons {
+    align-self: flex-end;
+  }
+}
