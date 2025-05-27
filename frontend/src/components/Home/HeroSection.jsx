@@ -5,7 +5,7 @@ export default function HeroSection() {
     <div className="bg">
       <div className="textbutton">
         <h1 className="text-6xl font-bold text-white mb-4">
-          Welcome to Our Website
+          Welcome to Our Website !
         </h1>
         <button className="bg-blue-950 text-white px-6 py-3 rounded-full shadow-lg hover:bg-white duration-300">
           Create Your Own
